@@ -3,7 +3,10 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
-var healthRouter = require('routes/healthRouter');
+import healthRouter from './routes/healthRouter.js';
+import animalRouter from './routes/animalRouter.js';
+import userRouter from './routes/userRouter.js';
+import trainingRouter from './routes/trainingRouter.js';
 
 dotenv.config();
 const connect = mongoose.connect(process.env.DATABASE_URI);
@@ -18,7 +21,9 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/api/health', healthRouter);
-
+app.use('/api/user', userRouter);
+app.use('/api/animal', animalRouter);
+app.use('/api/training', trainingRouter);
 
 app.get('/', (req, res) => {
     res.json({"Hello": "World",

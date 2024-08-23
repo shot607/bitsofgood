@@ -10,5 +10,5 @@
     "mongoose": "^8.5.4",
     "nodemon": "^2.0.20"
   },
-  "type": "commonjs"
+  "type": "module"
 }
