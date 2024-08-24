@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const trainingLogSchema = new Schema({
     date: {
         type: Date,
-        required: true,
+        default: Date.now()
     },
     description: {
         type: String,
@@ -30,17 +30,5 @@ const trainingLogSchema = new Schema({
     }
 });
 
-const TrainingLog = mongoose.model("TrainingLog", animalSchema);
+const TrainingLog = mongoose.model("TrainingLog", trainingLogSchema);
 export default TrainingLog;
-
-```
-TrainingLog {
-  _id: ObjectId // training log's id
-  date: Date // date of training log
-  description: string // description of training log
-  hours: number // number of hours the training log records
-  animal: ObjectId // animal this training log corresponds to
-  user: ObjectId // user this training log corresponds to
-  trainingLogVideo?: string // pointer to training log video in cloud storage --> used in Expert level
-}
-```

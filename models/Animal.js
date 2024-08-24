@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const animalSchema = new Schema({
@@ -15,9 +15,9 @@ const animalSchema = new Schema({
         ref: "User",
         required: true
     },
-    dataOfBirth: {
+    dateOfBirth: {
         type: Date,
-        required: false
+        default: Date.now()
     },
     profilePicture: {
         type: String,
@@ -27,14 +27,3 @@ const animalSchema = new Schema({
 
 const Animal = mongoose.model("Animal", animalSchema);
 export default Animal;
-
-```
-Animal {
-  _id: ObjectId // animal's ID
-  name: string // animal's name
-  hoursTrained: number // total number of hours the animal has been trained for
-  owner: ObjectId // id of the animal's owner
-  dateOfBirth?: Date // animal's date of birth
-  profilePicture?: string // pointer to animal's profile picture in cloud storage --> used in Expert level
-}
-```

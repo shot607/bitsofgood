@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import healthRouter from './routes/healthRouter.js';
 import animalRouter from './routes/animalRouter.js';
 import userRouter from './routes/userRouter.js';
-import trainingRouter from './routes/trainingRouter.js';
+import trainingRouter from './routes/trainingLogRouter.js';
 
 dotenv.config();
 const connect = mongoose.connect(process.env.DATABASE_URI);
