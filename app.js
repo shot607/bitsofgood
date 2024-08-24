@@ -2,7 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-
+import bodyParser from 'body-parser';
+import bcrypt from 'bcrypt';
 import healthRouter from './routes/healthRouter.js';
 import animalRouter from './routes/animalRouter.js';
 import userRouter from './routes/userRouter.js';
