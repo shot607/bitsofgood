@@ -7,6 +7,7 @@ import healthRouter from './routes/healthRouter.js';
 import animalRouter from './routes/animalRouter.js';
 import userRouter from './routes/userRouter.js';
 import trainingRouter from './routes/trainingLogRouter.js';
+import adminRouter from './routes/adminRouter.js';
 
 dotenv.config();
 const connect = mongoose.connect(process.env.DATABASE_URI);
@@ -24,6 +25,7 @@ app.use('/api/health', healthRouter);
 app.use('/api/user', userRouter);
 app.use('/api/animal', animalRouter);
 app.use('/api/training', trainingRouter);
+app.use('/api/admin/', adminRouter);
 
 app.get('/', (req, res) => {
     res.json({"Hello": "World",
